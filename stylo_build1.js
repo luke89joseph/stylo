@@ -73,6 +73,8 @@ class alertBox extends HTMLElement {
     this.c3 = this.getAttribute("colorText");
     this.curve = this.getAttribute("curve");
     this.font = this.getAttribute("fontFamily");
+    this.p1 = this.getAttribute("fromTop");
+    this.p2 = this.getAttribute("fromRight");
 
     this.shadowRoot.innerHTML = `
       <style>
@@ -87,8 +89,8 @@ class alertBox extends HTMLElement {
           margin: 5px 10px;
           position:fixed;
           left: 80%; 
-          right: 0%;
-          top: 0%;
+          right: (${this.p2}+0)%;
+          top: 2%;
           border-left:  ${this.c2} solid 15px;
           border-radius: ${this.curve};
 
